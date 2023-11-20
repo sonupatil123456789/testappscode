@@ -1,0 +1,38 @@
+_controller.value.isInitialized
+                    ? AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: VideoPlayer(VideoPlayerController.network(
+                                userdata[index]["video_link"].toString())
+                              ..addListener(() {
+                                setState(() {});
+                              })
+                              ..setLooping(true)
+                              ..initialize().then((_) => setState(() {}))
+                              ..play()
+                            // _displayVideo(
+                            //     videourl: userdata[index]["video_link"].toString())
+                            ),
+                      )
+                    : Center(
+                        child: CircularProgressIndicator(
+                        color: HexColor("#6C63FF"),
+                        strokeWidth: 8,
+                      ))
+
+
+
+
+
+
+
+
+
+                        _displayVideo({videourl = "", index = 0, bool init = false}) async {
+    _controller = await VideoPlayerController.network(videourl);
+    _controller.addListener(() {
+      setState(() {});
+    });
+    _controller.setLooping(true);
+    _controller.initialize().then((_) => setState(() {}));
+    _controller.play();
+  }

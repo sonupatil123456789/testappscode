@@ -1,0 +1,170 @@
+              // MultiSelectDropDown.network(
+              //   controller: _controller,
+              //   selectedItemBuilder: (p0, p1) {
+
+              //     return Container(
+              //       color: Colors.amberAccent,
+              //       width: 200,
+              //       height: 200,
+              //     );
+                  
+              //   },
+              //   onOptionSelected: (options) {
+              //     print(options);
+              //   },
+              //   networkConfig: NetworkConfig(
+              //     url: 'https://jsonplaceholder.typicode.com/users',
+              //     method: RequestMethod.get,
+              //     headers: {
+              //       'Content-Type': 'application/json',
+              //     },
+              //   ),
+              //   chipConfig: const ChipConfig(wrapType: WrapType.wrap),
+              //   responseParser: (response) {
+              //     print("value is $response");
+              //     final list = (response as List<dynamic>).map((e) {
+              //        print("value is $e");
+              //       final item = e as Map<String, dynamic>;
+              //       return ValueItem(
+              //         label: item['name'],
+              //         value: item['id'].toString(),
+              //       );
+              //     }).toList();
+
+              //     return Future.value(list);
+              //   },
+              //   responseErrorBuilder: ((context, body) {
+              //     return const Padding(
+              //       padding: EdgeInsets.all(16.0),
+              //       child: Text('Error fetching the data'),
+              //     );
+              //   }),
+              // ),
+              // DropdownButtonFormField()
+// DropdownSearch(items: Fruits, onChanged: onChanged, hintText: hintText)
+
+
+              
+// DropdownButtonFormField2(
+//   decoration: InputDecoration(
+//     enabledBorder: OutlineInputBorder( //<-- SEE HERE
+//       borderSide: BorderSide(color: Colors.black, width: 2),
+//     ),
+//     focusedBorder: OutlineInputBorder( //<-- SEE HERE
+//       borderSide: BorderSide(color: Colors.black, width: 2),
+//     ),
+//     filled: true,
+//     fillColor: Colors.greenAccent,
+//   ),
+//   // dropdownColor: Colors.greenAccent,
+//   value: dropdownValue,
+//   onChanged: (String? newValue) {
+//     setState(() {
+//       dropdownValue = newValue!;
+//     });
+//   },
+//   items: <String>['Dog', 'Cat', 'Tiger', 'Lion'].map<DropdownMenuItem<String>>((String value) {
+//     return DropdownMenuItem<String>(
+//       value: value,
+//       child: Text(
+//         value,
+//         style: TextStyle(fontSize: 20),
+//       ),
+//     );
+//   }).toList(),
+// ),
+
+
+             return CoustomChips(
+                  data: _chipsLists.toList()[index]['qualifacation'],
+                  index: index,
+                  activeBtn: Colors.blueAccent,
+                  deletChip: (item, int qualifacationId) {
+                    setState(() {
+                      print(_chipsLists.remove(_chipsLists.elementAt(itemToRemove)));
+                      widget.onChanged(item, _chipsLists.toList());
+                    });
+                  });
+            })
+            .toList()
+
+
+
+
+
+
+print(_chipsLists.remove(_chipsLists.elementAt(itemToRemove)));
+
+
+
+
+
+
+
+              // Expanded(
+              //   child: Container(
+              //     color: Colors.amber,
+                
+              //     child: Column(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [
+              //         SearchChoices.multiple(
+              //           items: <String>['Dog', 'Cat', 'Tiger', 'Lion']
+              //               .map<DropdownMenuItem<String>>((String value) {
+              //             return DropdownMenuItem<String>(
+              //               value: value,
+              //               child: Text(
+              //                 value,
+              //                 style: TextStyle(fontSize: 30),
+              //               ),
+              //              );
+              //           }).toList(),
+              //           selectedItems: selectedItemsMultiDialogWithCountAndWrap,
+                      
+              //           hint: "Select items",
+              //           searchHint: "Select items",
+              //           onChanged: (value) {
+              //             print("value is ==== $value");
+              //             setState(() {
+              //               selectedItemsMultiDialogWithCountAndWrap = value;
+              //             });
+              //           },
+              //           isExpanded: true,
+              //           selectedValueWidgetFn: (item) {
+              //             print("item is $item");
+              //             return (Container(
+              //               margin: const EdgeInsets.all(15.0),
+              //               padding: const EdgeInsets.all(3.0),
+              //               decoration: BoxDecoration(
+              //                   border: Border.all(color: Colors.blueAccent)),
+              //               child: Text(
+              //                 item,
+              //                 overflow: TextOverflow.ellipsis,
+              //               ),
+              //             ));
+              //           },
+              //           selectedAggregateWidgetFn: (List<Widget> list) {
+              //           print(list);
+              //             return (Column(children: [
+              //               Text("${list.length} items selected"),
+              //               Wrap(children: list),
+              //             ]));
+              //           },
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
+
+
+
+
+              DropdownSearch<String>.multiSelection(
+    items: ["Brazil", "Italia ", "Tunisia", 'Canada'],
+    popupProps: PopupPropsMultiSelection.menu(
+        showSelectedItems: true,
+        disabledItemFn: (String s) => s.startsWith('I'),
+    ),
+    onChanged: print,
+    selectedItems: ["Brazil"],
+),

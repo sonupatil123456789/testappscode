@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "927510190015",
+    "project_id": "chargingapp-dc147",
+    "storage_bucket": "chargingapp-dc147.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927510190015:android:44551c4ddb4e8ce3bc330a",
+        "android_client_info": {
+          "package_name": "com.example.fakestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927510190015-phintkp8po1vd95o9n2o2oh5s0a7jpns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnL0Fx2i7FsA4wgl4bfwZP-tL5s0EWPus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927510190015-phintkp8po1vd95o9n2o2oh5s0a7jpns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
